@@ -1,7 +1,7 @@
 ---
 layout: page
-title: project 3
-description: a project that redirects to another website
+title: Network Models for Multi-type Interactions
+description: multi-layer networks
 img: /assets/img/7.jpg
 redirect: https://unsplash.com
 importance: 3

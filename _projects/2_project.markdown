@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image
-img: /assets/img/3.jpg
+title: Methods for Interaction Detection and Estimation
+description: interactions
+img: /assets/img/dsw_interaction_type.png
 importance: 2
 ---
 
