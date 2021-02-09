@@ -22,6 +22,6 @@ Welcome to my site. I am a statistician and data scientist interested in impleme
 
 For information on some of the research topics I am interested in, please see [here]({{ site.baseurl }}{% link _pages/projects.md%}), or browse the highlighted research below. To see some of the code that I have written, please see [here](https://www.github.com/boselio).
 
-**As of February 2021, I am on the job market.**
+**As of 2021, I am on the job market.**
 
 

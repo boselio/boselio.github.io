@@ -1,11 +1,46 @@
 ---
 layout: page
-title: Network Models for Multi-type Interactions
-description: multi-layer networks
-img: /assets/img/7.jpg
-redirect: https://unsplash.com
-importance: 3
+title: Methods for Interaction Detection and Estimation
+description: interactions
+img: /assets/img/dsw_interaction_type.png
+importance: 2
 ---
+
+## Dynamic summarization of interacting agents
+
+Coming soon!
+Networks have also been used to describe the influence and dependence between
+agents or features. A popular example of this is the partial correlation graph for
+Gaussian graphical models, and the corresponding
+algorithms used for estimation, such as graphical lasso type algorithms and thresholding
+approaches. These models seek to uncover a
+parsimonious dependence representation of the data with computational complexity
+that is scalable in high
+feature dimension. These models and quantities often assume, however, that each sample is
+i.i.d.; in many instances, we are interested in understanding the relationships
+between time series data that may contain complex causal dependencies across
+time. Examples of this type of model include spatio-temporal covariance
+modeling.
+
+A quantity used to measure dependence across time is directed
+information. Unlike partial correlation, directed
+information is assymmetric and time dependent. It was originally created
+as a generalization of Shannon mutual information for a channel with
+feedback. Directed
+information allows for a more rich
+understanding of the influence and behavior among agents. Directed information
+is also closely related to Granger causality.
+
+Work has been done to estimate directed information in the context of discrete Markov
+processes, and generalized linear
+models. However, these graphs are generally
+considered fixed, and the time series stationary. In Chapter, this
+thesis introduces adaptive directed
+information (ADI) to account for time varying signals, and demonstrates specific
+forms of ADI that elicit computationally efficient estimation procedures. In
+Chapter, we
+introduce an ensemble of ADI estimators that is more robust to the choice
+of parameters and to the type of time varying signal.
 
 Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.

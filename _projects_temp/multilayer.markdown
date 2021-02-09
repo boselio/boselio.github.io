@@ -1,10 +1,52 @@
 ---
 layout: page
-title: Statistical Models for Interaction Data
-description: network models
-img: /assets/img/concep_fig_h.png
-importance: 1
+title: Network Models for Multi-type Interactions
+description: multi-layer networks
+img: /assets/img/7.jpg
+redirect: https://unsplash.com
+importance: 3
 ---
+
+## Information extraction from multi-layer networks
+
+We often find heterogeneous relationships in data, reflected in more than one type of
+relationship between agents. These types of relationships may impose different
+topological properties. For instance, in a social network context, people may be
+connected by more than one social platform. Alternatively, we may observe
+explicit links between agents but also infer implicit affinities based on agent
+features. Multi-layer networks can be used to account for this additional
+complexity.
+
+A multi-layer network is a network where a set of nodes are connected
+by intra-layer and inter-layer edges. This structure is a
+generalization of single-layer networks, where there are only intra-layer
+relationships. These layers represent heterogeneity in the structure or labeling
+of the data; a layer might correspond to a type of connection, or a snapshot of
+the network at a specific time. The inter-layer structure represents ties among
+nodes in the different
+layers; this structure may be observed, assumed, or estimated depending on the
+application. The inter-layer structure in a social network often preserves the labels of the nodes, so that each node in a single layer is connected to its
+unique counterpart in the other layers. If the layers represent timesteps at any
+time instant, each entity
+might be connected to its counterpart in layers before and after the present
+layer, which represents the localization of that layer’s characteristics in time.
+
+As the multi-layer structure is more complicated than its single-layer
+counterpart, methods for single-layer analysis must be modified, and new methods
+can be developed specifically for multi-layer
+networks. In Chapter, this thesis provides a framework for
+modeling multi-layer networks, concentrating on centrality measures and community
+detection. In Chapter the thesis provides a novel
+multi-layer community detection approach that selects approximately
+Pareto-optimal partitions between nodes.
+
+Dynamic networks can be thought of as a special case of multi-layer networks.
+However, it is also possible to have a dynamic multi-layer network, where each
+layer is evolving concurrently over time. In Chapter, this
+thesis proposes a multi-layer summarization
+procedure for this case based on the dynamic stochastic
+blockmodel, which allows for an efficient representation of
+the dynamic network.
 
 Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.

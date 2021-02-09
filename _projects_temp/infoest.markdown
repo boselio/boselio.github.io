@@ -1,10 +1,58 @@
 ---
 layout: page
-title: Methods for Interaction Detection and Estimation
-description: interactions
-img: /assets/img/dsw_interaction_type.png
-importance: 2
+title: Statistical Models for Interaction Data
+description: 
+img: /assets/img/concep_fig_h.png
+importance: 1
 ---
+
+Complex, structured data is ubiquitous in both industrial and academic settings
+and has elicited a commensurate interest in utilizing
+structured data to inform inference and decisions. Often, this underlying structure can be
+exploited to make inference and summarization procedures more tractable. In the context of large
+datasets, it is
+imperative to consider the data in the context of this
+structure to build parsimonious models that represent the data well and provide
+theoretically grounded inference procedures. Similarly, searching for underlying
+structure can help to summarize the data more efficiently and find relevant
+attributes of the data of interest that might otherwise go undetected. In other
+datasets the structure is explicit, and thus requires careful
+consideration when reasoning about modeling decisions. 
+
+In this thesis, the focus is on data that has network structure and on problems
+that benefit from the application of network based algorithms. In both
+cases we are concerned with data that can be summarized with a relational
+structure of constituent nodes and edges, appropriately defined based on the
+context of the problem. Below, four research areas are introduced that utilize network
+structure that form the backbone of this thesis.
+
+## Graph based estimation of information theoretic quantities
+
+Graph based estimation methods aim to skip the density estimation stage and
+directly estimate the quantity of interest by calculating a graph structure over
+the data sample, such as a minimal spanning tree or k-NN graph. One of the
+original algorithms in this area was for the estimation of Henze-Penrose (HP)
+divergence, which is a
+member of 
+the broad class of $f$ divergences. This divergence measure
+has two important properties. First, it is possible to estimate the HP
+divergence directly from a minimal spanning tree across the data sample. As the
+minimal spanning tree can be computed in $O(n\log n)$, this approach to
+estimation is amenable to large datasets. Second, tight bounds have been proved
+that relate the HP divergence to the Bayes error rate of a binary
+classification problem. Thus, accurate estimation of the HP divergence allows
+for learning of the intrinsic hardness of the supervised learning task. Although tight
+bounds exist for the Bayes error rate for a binary classification
+task, this is not true for multi-class classification. In Chapter, we derive
+tight bounds for the multi-class case using a generalized Henze-Penrose measure,
+and provide a graph based estimation procedure using a minimal spanning tree.
+
+Like other estimation methods, graph based estimation methods are subject to the
+curse of dimensionality. Specifically, as the feature dimension of the data
+increases, the bias of the estimate also increases. In
+Chapter the thesis introduces a new estimator
+of the HP divergence, based on a different computed graph, that reduces the bias
+for growing dimension.
 
 Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.
