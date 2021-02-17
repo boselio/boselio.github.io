@@ -1,8 +1,8 @@
 ---
 layout: page
-title: research
+title: Research
 permalink: /research/
-description: A growing collection of your cool projects.
+description: Summaries of current and past projects
 nav: true
 ---
 

@@ -20,7 +20,7 @@ tester: true
 
 Welcome to my site. I am a statistician and data scientist interested in implementing and improving state-of-the-art methods for a variety of challenging problems with data. In the past, I have worked extensively in the fields of statistical modeling for network data and statistical signal processing. 
 
-For information on some of the research topics I am interested in, please see [here]({{ site.baseurl }}{% link _pages/projects.md%}), or browse the highlighted research below. To see some of the code that I have written, please see [here](https://www.github.com/boselio).
+For information on some of the research topics I am interested in, please see [here]({{ site.baseurl }}{% link _pages/projects.md%}), or browse the highlighted research below. To see some of the code that I have written, please see [here](https://www.github.com/boselio). A copy of my PhD thesis can be found [here]({{ site.baseurl }}{% link assets/pdf/thesis.pdf%}).
 
 **As of 2021, I am on the job market.**
 
