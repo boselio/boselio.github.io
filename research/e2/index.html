@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Brandon  Oselio | Statistical Models for Interaction Data</title>
+<meta name="description" content="Personal website for Brandon Oselio.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/research/e2/">
+
+<!-- Theming-->
+
+
+
+
+    
+<!-- MathJax -->
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">Brandon</span>   Oselio
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                Publications
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/research/">
+                Research
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Statistical Models for Interaction Data</h1>
+    <p class="post-description"></p>
+  </header>
+
+  <article>
+    <p>Models for interaction data are of increasing interest in the machine-learning,
+complex systems, and statistical literature. Examples of interaction data include email data,
+where a simplified interaction would be a sender $s$ and a set of receivers \(r_1, r_2, \ldots r_k\), or social media data, where an interaction could be a single posting consisting of a poster \(p\) and commenters \(c_1, c_2, \ldots, c_l\). In full generality, the interaction could include other components, such as the time \(t\) of the interaction, or relevant interaction features like the content of the email.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/concep_fig_h.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    An example of two interactions from a social media dataset. Here, there is the interaction (a, (b, c, d)) and (e, (d,f)).
+</div>
+
+<p>For models to be useful, it is vital that they reflect observed
+properties of real-world networks, such as sparsity,
+clustering, and power-law or scale-free behavior. Many models, such as
+the stochastic block model and related variants which seek to find clusters within the data,
+are node-exchangeable, meaning that the
+permutation of the labels of the nodes
+does not change the likelihood of the observed network. As a result of this property, it can be
+shown that data generated from these models cannot be sparse or capture
+scale-free behavior, both of which are often seen in real-world networks.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/node_exchangeable_ex.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    An example of a model that is node-exchangeable; the probability of both networks are the same, even though the labels of the nodes have been changed.
+</div>
+
+<p>Recently, an alternative approach has emerged for modeling network data by treating
+the edge, or interaction, as the statistical sampling unit. This is particularly
+natural in the context of many datasets, such as email networks, social
+networks, and co-authorship networks. For such data, it is valuable to impose exchangeability on the
+edges as opposed to the nodes.
+These edge exchangeable models have
+generated recent attention and are able to exhibit both sparsity and power-law
+behavior.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/edge_exchangeable_ex.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    An example of a model that is edge-exchangeable; the probability of both networks are the same, even though the labels of the edge have been changed; crucially, the probability would not be the same if the labels of the nodes were changed.
+</div>
+
+<h2 id="hierarchical-interaction-exchangeable-models">Hierarchical Interaction Exchangeable Models</h2>
+
+<p>Previous edge exchangeable models cannot account for complex hierarchical structure in interactions. For
+instance, an email has a hierarchical structure induced by a sender and its many receivers,
+and a movie can be thought of as an interaction with multiple sets of individuals,
+such as directors, actors, and screenwriters. As an example, we show local degree distributions of an email dataset, for six of the most populous senders. We note that each sender has unique behavior and further that each sender will have different receivers that are popular with that sender.</p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/local_enron_dists.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    Local degree distributions of the Enron email dataset. Note the difference in overall behavior.
+</div>
+
+<p>In order to account for this heterogeneity, we have created a new model termed the Pitman Yor vertex components model (PY-HVCM). We show through a variety of posterior predictive checks and prediction measures that we outperform similar interaction exchangeable models that do not take into account this hierarchical structure, as well as other state-of-the-art network models. We also apply the model to an arXiv dataset, and using the model are able to show strong clusterings of the subjects on arXiv.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/arxiv_sharing.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    Clustering of the arXiv subjects. Higher on the scale denotes more similarity found from our model. 
+</div>
+
+<h2 id="temporal-interaction-exchangeable-models">Temporal Interaction Exchangeable Models</h2>
+
+<p>Coming soon!</p>
+
+<h3 id="relevant-pubications">Relevant pubications:</h3>
+<div class="publications">
+  <ol class="bibliography"><li><div class="row">
+
+  <div id="oselio2020teem" class="col-sm-10">
+    
+      <div class="title">Temporal edge-exchangeable interaction networks</div>
+      <div class="author">
+        
+          
+            
+              
+                <em>Oselio, Brandon</em>,
+              
+            
+          
+        
+          
+            
+              
+                
+                  and Dempsey, Walter
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>in preparation</em>
+      
+      
+        2021
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+
+  <div id="dempsey2019hierarchical" class="col-sm-10">
+    
+      <div class="title">Hierarchical network models for structured exchangeable interaction processes</div>
+      <div class="author">
+        
+          
+            
+              
+                
+                  Dempsey, Walter,
+                
+              
+            
+          
+        
+          
+            
+              
+                <em>Oselio, Brandon</em>,
+              
+            
+          
+        
+          
+            
+              
+                
+                  and Hero, Alfred
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Journal of the American Statistical Association (In review)</em>
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+
+  <div id="crane2018edge" class="col-sm-10">
+    
+      <div class="title">Edge exchangeable models for interaction networks</div>
+      <div class="author">
+        
+          
+            
+              
+                
+                  Crane, Harry,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  and Dempsey, Walter
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Journal of the American Statistical Association</em>
+      
+      
+        2018
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+  </div>
+</div>
+</li></ol>
+</div>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2021 Brandon  Oselio.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+<!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+</html>
